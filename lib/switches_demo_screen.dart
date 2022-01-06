@@ -41,7 +41,7 @@ enum SkillLevel {Junior, middle, senior}
   ],
   ),
   CheckboxListTile(
-  title: Text('Принять условия соглшения'),
+  title: Text('Принять условия соглашения'),
   value: _confirmAgreement, onChanged: (val) {
     setState(() {
       _confirmAgreement=!_confirmAgreement;
