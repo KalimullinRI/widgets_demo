@@ -10,12 +10,29 @@ class NavigationDrawerScreen extends StatefulWidget {
 class _NavigationDrawerScreenState extends State<NavigationDrawerScreen> {
   final _messengerKey = GlobalKey<ScaffoldMessengerState>();
 
+
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle buttonStyle =
+  TextButton.styleFrom(primary: Theme.of(context).colorScheme.onPrimary);
     return MaterialApp(
       scaffoldMessengerKey: _messengerKey,
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: const Text('AppBar'),
+          actions: <Widget>[
+            IconButton(
+                tooltip: 'Баланс',
+                onPressed: () {},
+                icon: Icon(Icons.add_box_rounded)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
+            TextButton(
+              onPressed: () {},
+              child: const Text('Профиль'),
+              style: buttonStyle,
+            ),
+          ],
+        ),
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
